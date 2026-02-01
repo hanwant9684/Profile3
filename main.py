@@ -9,7 +9,7 @@ if os.path.exists("pyrogram") and os.path.isdir("pyrogram"):
 
 # Set default event loop for pyrogram sync
 try:
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
 except RuntimeError:
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
