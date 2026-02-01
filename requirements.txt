@@ -27,3 +27,14 @@ pysocks
 python-dotenv
 tgcrypto
 uvloop
+aiofiles
+aiohttp
+dnspython
+flask
+psutil
+pyaes
+pyrogram
+pysocks
+python-dotenv
+tgcrypto
+uvloop

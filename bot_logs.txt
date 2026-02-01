@@ -1,0 +1,4 @@
+2026-02-01 16:07:12,474 - bot.cloud_backup - INFO - Attempting to restore from GitHub...
+2026-02-01 16:07:12,780 - bot.cloud_backup - ERROR - GitHub restore failed: HTTP Error 404: Not Found
+2026-02-01 16:07:12,846 - bot.database - INFO - SQLite database initialized: telegram_bot.db
+2026-02-01 16:07:13,041 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
