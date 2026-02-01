@@ -146,17 +146,17 @@ class SaveFile:
 
             file_total_parts = int(math.ceil(file_size / part_size))
             is_big = file_size > 10 * 1024 * 1024
-            # TURBO: Higher default workers for maximum speed
+            # TURBO: Optimized workers for upload
             if workers:
                 workers_count = workers
             elif file_size < 5 * 1024 * 1024:
-                workers_count = 8
-            elif file_size < 50 * 1024 * 1024:
                 workers_count = 16
-            elif file_size < 200 * 1024 * 1024:
-                workers_count = 24
-            else:
+            elif file_size < 50 * 1024 * 1024:
                 workers_count = 32
+            elif file_size < 200 * 1024 * 1024:
+                workers_count = 48
+            else:
+                workers_count = 64
             is_missing_part = file_id is not None
             file_id = file_id or self.rnd_id()
             md5_sum = md5() if not is_big and not is_missing_part else None

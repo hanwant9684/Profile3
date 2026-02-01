@@ -193,7 +193,7 @@ class DownloadMedia:
             )
 
         downloader = self.handle_download(
-            (file_id_obj, directory, file_name, in_memory, file_size, progress, progress_args, workers)
+            (file_id_obj, directory, file_name, in_memory, file_size, progress, progress_args, 1)
         )
 
         if block:
