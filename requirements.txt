@@ -22,7 +22,6 @@ dnspython
 flask
 psutil
 pyaes
-pyrogram
 pysocks
 python-dotenv
 tgcrypto
@@ -33,7 +32,6 @@ dnspython
 flask
 psutil
 pyaes
-pyrogram
 pysocks
 python-dotenv
 tgcrypto
