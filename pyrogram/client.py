@@ -226,9 +226,9 @@ class Client(Methods):
     WORKDIR = PARENT_DIR
 
     # Interval of seconds in which the updates watchdog will kick in
-    UPDATES_WATCHDOG_INTERVAL = 15 * 60
+    UPDATES_WATCHDOG_INTERVAL = 30 * 60
 
-    MAX_CONCURRENT_TRANSMISSIONS = 100
+    MAX_CONCURRENT_TRANSMISSIONS = 200
     MAX_MESSAGE_CACHE_SIZE = 10000
 
     mimetypes = MimeTypes()

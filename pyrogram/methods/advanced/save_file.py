@@ -184,8 +184,8 @@ class SaveFile:
                         await session.invoke(data)
                         uploaded_parts += 1
                         
-                        # Progress callback
-                        if progress:
+                        # Progress callback - throttled for performance
+                        if progress and (uploaded_parts % 10 == 0 or uploaded_parts == file_total_parts):
                             func = functools.partial(
                                 progress,
                                 min(uploaded_parts * part_size, file_size),

@@ -28,8 +28,8 @@ async def progress_bar(current, total, message, type_msg):
     data = progress_bar.data[msg_id]
     percentage = current * 100 / total
     
-    # Throttle updates: Update at most every 4 seconds to avoid bottleneck
-    if current != total and (now - data["last_edit"]) < 4:
+    # Throttle updates: Update at most every 5 seconds to avoid bottleneck
+    if current != total and (now - data["last_edit"]) < 5:
         return
 
     # Calculate speed (bytes per second)
