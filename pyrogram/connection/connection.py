@@ -20,7 +20,7 @@ import asyncio
 import logging
 from typing import Optional, Type
 
-from .transport import TCP, TCPAbridged
+from .transport import TCP, TCPAbridged, TCPFull
 from ..session.internals import DataCenter
 
 log = logging.getLogger(__name__)
@@ -36,7 +36,7 @@ class Connection:
         ipv6: bool,
         proxy: dict,
         media: bool = False,
-        protocol_factory: Type[TCP] = TCPAbridged
+        protocol_factory: Type[TCP] = TCPFull # TURBO: TCPFull is often more stable for large uploads
     ) -> None:
         self.dc_id = dc_id
         self.test_mode = test_mode

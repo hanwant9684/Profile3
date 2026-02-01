@@ -56,3 +56,17 @@
 2026-02-01 17:04:47,531 - bot.cloud_backup - ERROR - GitHub restore failed: HTTP Error 404: Not Found
 2026-02-01 17:04:47,540 - bot.database - INFO - SQLite database initialized: telegram_bot.db
 2026-02-01 17:04:47,634 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
+2026-02-01 17:05:49,324 - bot.ads - INFO - RichAds: No ads available for user 721236024
+2026-02-01 17:05:50,353 - root - INFO - TURBO Download: File=downloads/721236024_1664.mp4, Size=204621879, Workers=1, Chunk=524288
+2026-02-01 17:07:40,786 - root - INFO - TURBO Upload: File=/home/runner/workspace/downloads/721236024_1664.mp4, Size=204621879, Workers=64, Chunk=524288
+2026-02-01 17:08:31,619 - asyncio - WARNING - socket.send() raised exception.
+2026-02-01 17:08:31,620 - asyncio - WARNING - socket.send() raised exception.
+2026-02-01 17:08:31,756 - asyncio - WARNING - socket.send() raised exception.
+2026-02-01 17:08:31,757 - asyncio - WARNING - socket.send() raised exception.
+2026-02-01 17:08:31,892 - asyncio - WARNING - socket.send() raised exception.
+2026-02-01 17:08:31,893 - asyncio - WARNING - socket.send() raised exception.
+2026-02-01 17:11:03,370 - root - INFO - Stop signal received (SIGTERM). Exiting...
+2026-02-01 17:11:06,650 - bot.cloud_backup - INFO - Attempting to restore from GitHub...
+2026-02-01 17:11:07,378 - bot.cloud_backup - ERROR - GitHub restore failed: HTTP Error 404: Not Found
+2026-02-01 17:11:07,380 - bot.database - INFO - SQLite database initialized: telegram_bot.db
+2026-02-01 17:11:07,493 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
