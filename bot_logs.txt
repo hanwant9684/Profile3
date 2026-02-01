@@ -24,3 +24,30 @@
 2026-02-01 16:14:48,554 - bot.cloud_backup - ERROR - GitHub restore failed: HTTP Error 404: Not Found
 2026-02-01 16:14:48,558 - bot.database - INFO - SQLite database initialized: telegram_bot.db
 2026-02-01 16:14:48,649 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
+2026-02-01 16:17:38,855 - bot.cloud_backup - INFO - Attempting to restore from GitHub...
+2026-02-01 16:17:39,214 - bot.cloud_backup - ERROR - GitHub restore failed: HTTP Error 404: Not Found
+2026-02-01 16:17:39,215 - bot.database - INFO - SQLite database initialized: telegram_bot.db
+2026-02-01 16:17:39,303 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
+2026-02-01 16:53:02,851 - bot.cloud_backup - INFO - Attempting to restore from GitHub...
+2026-02-01 16:53:03,148 - bot.cloud_backup - ERROR - GitHub restore failed: HTTP Error 404: Not Found
+2026-02-01 16:53:03,151 - bot.database - INFO - SQLite database initialized: telegram_bot.db
+2026-02-01 16:53:03,438 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
+2026-02-01 16:53:12,373 - bot.ads - INFO - RichAds: No ads available for user 721236024
+2026-02-01 16:53:14,973 - bot.ads - INFO - RichAds: No ads available for user 721236024
+2026-02-01 16:53:49,314 - bot.database - INFO - Saved session for user 721236024
+2026-02-01 16:53:59,481 - bot.ads - INFO - RichAds: No ads available for user 721236024
+2026-02-01 16:54:00,538 - root - INFO - TURBO Download: File=downloads/721236024_1664.mp4, Size=204621879, Workers=1, Chunk=524288
+2026-02-01 16:55:39,442 - root - INFO - TURBO Upload: File=/home/runner/workspace/downloads/721236024_1664.mp4, Size=204621879, Workers=32, Chunk=524288
+2026-02-01 16:56:35,214 - bot.ads - INFO - RichAds: No ads available for user 721236024
+2026-02-01 16:56:36,132 - root - INFO - TURBO Download: File=downloads/721236024_1664.mp4, Size=204621879, Workers=1, Chunk=524288
+2026-02-01 16:58:11,887 - root - INFO - TURBO Upload: File=/home/runner/workspace/downloads/721236024_1664.mp4, Size=204621879, Workers=32, Chunk=524288
+2026-02-01 17:02:02,484 - root - INFO - Stop signal received (SIGTERM). Exiting...
+2026-02-01 17:02:04,847 - bot.cloud_backup - INFO - Attempting to restore from GitHub...
+2026-02-01 17:02:05,153 - bot.cloud_backup - ERROR - GitHub restore failed: HTTP Error 404: Not Found
+2026-02-01 17:02:05,170 - bot.database - INFO - SQLite database initialized: telegram_bot.db
+2026-02-01 17:02:05,284 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
+2026-02-01 17:02:27,374 - root - INFO - Stop signal received (SIGTERM). Exiting...
+2026-02-01 17:02:31,036 - bot.cloud_backup - INFO - Attempting to restore from GitHub...
+2026-02-01 17:02:31,336 - bot.cloud_backup - ERROR - GitHub restore failed: HTTP Error 404: Not Found
+2026-02-01 17:02:31,340 - bot.database - INFO - SQLite database initialized: telegram_bot.db
+2026-02-01 17:02:31,443 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes

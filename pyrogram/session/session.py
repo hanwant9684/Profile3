@@ -46,12 +46,12 @@ class Result:
 
 
 class Session:
-    START_TIMEOUT = 2
-    WAIT_TIMEOUT = 15
+    START_TIMEOUT = 1
+    WAIT_TIMEOUT = 10
     SLEEP_THRESHOLD = 60
-    MAX_RETRIES = 10
-    ACKS_THRESHOLD = 10
-    PING_INTERVAL = 5
+    MAX_RETRIES = 5
+    ACKS_THRESHOLD = 20 # Batch more acks
+    PING_INTERVAL = 10 # Less frequent pings
     STORED_MSG_IDS_MAX_SIZE = 1000 * 2
 
     TRANSPORT_ERRORS = {

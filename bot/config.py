@@ -44,21 +44,17 @@ def get_smart_upload_workers(file_size):
     if file_size < 5 * 1024 * 1024:
         return 16
     elif file_size < 50 * 1024 * 1024:
-        return 24
-    elif file_size < 200 * 1024 * 1024:
         return 32
+    elif file_size < 200 * 1024 * 1024:
+        return 64
     else:
-        return 48
+        return 128
 
 def get_smart_chunk_size(file_size):
     """
-    TURBO: Maximum chunk size for faster throughput.
-    Max allowed by Telegram is 512 KB.
+    TURBO: Always use maximum allowed chunk size.
     """
-    if file_size < 5 * 1024 * 1024:
-        return 256 * 1024
-    else:
-        return 512 * 1024
+    return 512 * 1024
 
 # Optimization for 1.5GB RAM VPS and faster execution
 import asyncio
