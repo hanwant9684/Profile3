@@ -1,6 +1,12 @@
+import sys
+import os
 import asyncio
 import logging
-import os
+
+# Ensure custom pyrogram library is used if present
+if os.path.exists("pyrogram") and os.path.isdir("pyrogram"):
+    sys.path.insert(0, os.path.abspath("."))
+
 # Set default event loop for pyrogram sync
 try:
     loop = asyncio.get_event_loop()
