@@ -103,3 +103,7 @@ sqlite3.ProgrammingError: Cannot operate on a closed database.
 2026-02-01 17:16:35,523 - bot.cloud_backup - ERROR - GitHub restore failed: HTTP Error 404: Not Found
 2026-02-01 17:16:35,529 - bot.database - INFO - SQLite database initialized: telegram_bot.db
 2026-02-01 17:16:35,618 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
+2026-02-01 17:17:12,135 - bot.ads - INFO - RichAds: No ads available for user 721236024
+2026-02-01 17:17:16,752 - bot.ads - INFO - RichAds: No ads available for user 721236024
+2026-02-01 17:17:17,782 - root - INFO - TURBO Download: File=downloads/721236024_1664.mp4, Size=204621879, Workers=1, Chunk=524288
+2026-02-01 17:19:25,281 - root - INFO - TURBO Upload: File=/home/runner/workspace/downloads/721236024_1664.mp4, Size=204621879, Workers=64, Chunk=524288
