@@ -32,20 +32,7 @@ async def progress_bar(current, total, message, type_msg):
     if current != total and (now - data["last_edit"]) < 5:
         return
 
-    # Calculate speed (bytes per second)
-    elapsed_time = now - data["start_time"]
-    if elapsed_time > 0:
-        speed = current / elapsed_time
-    else:
-        speed = 0
-        
-    # Calculate ETA
-    if speed > 0:
-        remaining_bytes = total - current
-        eta = remaining_bytes / speed
-    else:
-        eta = 0
-
+    # Calculate speed, ETA, etc removed for performance
     def format_size(size):
         for unit in ['B', 'KB', 'MB', 'GB', 'TB']:
             if size < 1024.0:
@@ -53,33 +40,16 @@ async def progress_bar(current, total, message, type_msg):
             size /= 1024.0
         return f"{size:.2f} TB"
 
-    def format_time(seconds):
-        if seconds <= 0: return "0s"
-        minutes, seconds = divmod(int(seconds), 60)
-        hours, minutes = divmod(minutes, 60)
-        if hours > 0: return f"{hours}h {minutes}m {seconds}s"
-        if minutes > 0: return f"{minutes}m {seconds}s"
-        return f"{seconds}s"
-
-    speed_str = format_size(speed) + "/s"
-    eta_str = format_time(eta)
-    
-    # Progress bar visual
-    completed = int(percentage / 10)
-    bar = "█" * completed + "░" * (10 - completed)
-    
     text = (
         f"**{type_msg}**\n"
-        f"[{bar}] {percentage:.1f}%\n"
-        f"🚀 **Speed:** `{speed_str}`\n"
-        f"⏳ **ETA:** `{eta_str}`\n"
-        f"📦 **Size:** `{format_size(current)} / {format_size(total)}`"
+        f"Progress: {percentage:.1f}%\n"
+        f"Size: `{format_size(current)} / {format_size(total)}`"
     )
 
     if current == total:
         progress_bar.data.pop(msg_id, None)
         try:
-            await message.edit_text(f"**{type_msg} Completed!**\n📦 **Total Size:** `{format_size(total)}`")
+            await message.edit_text(f"**{type_msg} Completed!**\nSize: `{format_size(total)}`")
         except:
             pass
     else:

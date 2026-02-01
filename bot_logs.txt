@@ -70,3 +70,36 @@
 2026-02-01 17:11:07,378 - bot.cloud_backup - ERROR - GitHub restore failed: HTTP Error 404: Not Found
 2026-02-01 17:11:07,380 - bot.database - INFO - SQLite database initialized: telegram_bot.db
 2026-02-01 17:11:07,493 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
+2026-02-01 17:11:55,638 - bot.ads - INFO - RichAds: No ads available for user 721236024
+2026-02-01 17:11:56,831 - root - INFO - TURBO Download: File=downloads/721236024_1664.mp4, Size=204621879, Workers=1, Chunk=524288
+2026-02-01 17:13:58,646 - root - INFO - TURBO Upload: File=/home/runner/workspace/downloads/721236024_1664.mp4, Size=204621879, Workers=64, Chunk=524288
+2026-02-01 17:14:39,387 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-1180' coro=<Session.restart() done, defined at /home/runner/workspace/pyrogram/session/session.py:185> exception=ProgrammingError('Cannot operate on a closed database.')>
+Traceback (most recent call last):
+  File "/home/runner/workspace/pyrogram/session/session.py", line 187, in restart
+    await self.start()
+  File "/home/runner/workspace/pyrogram/session/session.py", line 152, in start
+    raise e
+  File "/home/runner/workspace/pyrogram/session/session.py", line 126, in start
+    api_id=await self.client.storage.api_id(),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/pyrogram/storage/sqlite_storage.py", line 242, in api_id
+    return self._accessor(value)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/pyrogram/storage/sqlite_storage.py", line 236, in _accessor
+    return self._get() if value == object else self._set(value)
+           ^^^^^^^^^^^
+  File "/home/runner/workspace/pyrogram/storage/sqlite_storage.py", line 222, in _get
+    return self.conn.execute(
+           ^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+2026-02-01 17:16:22,074 - root - INFO - Stop signal received (SIGTERM). Exiting...
+2026-02-01 17:16:23,831 - bot.cloud_backup - INFO - Attempting to restore from GitHub...
+2026-02-01 17:16:24,145 - bot.cloud_backup - ERROR - GitHub restore failed: HTTP Error 404: Not Found
+2026-02-01 17:16:24,146 - bot.database - INFO - SQLite database initialized: telegram_bot.db
+2026-02-01 17:16:24,231 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
+2026-02-01 17:16:31,150 - root - INFO - Stop signal received (SIGTERM). Exiting...
+2026-02-01 17:16:35,206 - bot.cloud_backup - INFO - Attempting to restore from GitHub...
+2026-02-01 17:16:35,523 - bot.cloud_backup - ERROR - GitHub restore failed: HTTP Error 404: Not Found
+2026-02-01 17:16:35,529 - bot.database - INFO - SQLite database initialized: telegram_bot.db
+2026-02-01 17:16:35,618 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
