@@ -106,11 +106,24 @@ class TCP:
     ) -> None:
         host, port = destination
         family = socket.AF_INET6 if self.ipv6 else socket.AF_INET
+        
+        # TURBO: Optimized socket buffer sizes for high-speed transfers
         self.reader, self.writer = await asyncio.open_connection(
             host=host,
             port=port,
             family=family
         )
+        
+        try:
+            sock = self.writer.get_extra_info("socket")
+            if sock:
+                # 8MB send/receive buffers
+                sock.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 8 * 1024 * 1024)
+                sock.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 8 * 1024 * 1024)
+                sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
+                log.info("TURBO: Socket buffers optimized (8MB)")
+        except Exception as e:
+            log.warning(f"Failed to optimize socket buffers: {e}")
 
     async def _connect(self, destination: Tuple[str, int]) -> None:
         if self.proxy:

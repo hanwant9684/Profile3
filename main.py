@@ -44,7 +44,7 @@ if __name__ == "__main__":
     asyncio.get_event_loop().run_until_complete(restore_latest_from_cloud())
     
     print("Initializing database...")
-    init_db()
+    asyncio.get_event_loop().run_until_complete(init_db())
 
     # Check for TgCrypto and debug crypto speed
     try:

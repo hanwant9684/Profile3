@@ -180,12 +180,13 @@ async def download_handler(client, message):
         )
         return
 
-    # Show RichAds for free users
-    try:
-        from bot.ads import show_ad
-        await show_ad(client, user_id)
-    except Exception as e:
-        print(f"Error showing RichAds: {e}")
+    # Show RichAds for free users in background
+    if not (user_id in active_downloads):
+        try:
+            from bot.ads import show_ad
+            asyncio.create_task(show_ad(client, user_id))
+        except Exception as e:
+            print(f"Error scheduling RichAds: {e}")
 
     if user_id in active_downloads:
         await message.reply("⚠️ You already have a download in progress. Please wait.")

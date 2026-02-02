@@ -144,3 +144,18 @@ sqlite3.ProgrammingError: Cannot operate on a closed database.
 2026-02-02 01:24:58,215 - root - INFO - TURBO Upload: File=/home/runner/workspace/downloads/721236024_1664.mp4, Size=204621879, Workers=64, Chunk=524288
 2026-02-02 01:29:03,907 - bot.cloud_backup - INFO - Uploaded to GitHub: backups/backup_20260202_012902.db
 2026-02-02 01:29:05,463 - bot.cloud_backup - INFO - Deleted old backup: backup_20260201_180343.db
+2026-02-02 01:39:06,325 - bot.cloud_backup - INFO - Uploaded to GitHub: backups/backup_20260202_013905.db
+2026-02-02 01:39:07,809 - bot.cloud_backup - INFO - Deleted old backup: backup_20260202_011603.db
+2026-02-02 01:40:44,723 - root - INFO - Stop signal received (SIGTERM). Exiting...
+2026-02-02 01:40:48,773 - bot.cloud_backup - INFO - Attempting to restore from GitHub...
+2026-02-02 01:40:49,470 - bot.cloud_backup - INFO - Current database backed up to: telegram_bot.db.before_restore
+2026-02-02 01:40:49,470 - bot.cloud_backup - INFO - Database restored from: temp_restore.db
+2026-02-02 01:40:49,471 - bot.cloud_backup - INFO - Restored from GitHub: backup_20260202_013905.db
+2026-02-02 01:40:49,571 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
+2026-02-02 01:41:11,980 - root - INFO - Stop signal received (SIGTERM). Exiting...
+2026-02-02 01:41:16,074 - bot.cloud_backup - INFO - Attempting to restore from GitHub...
+2026-02-02 01:41:16,550 - bot.cloud_backup - INFO - Current database backed up to: telegram_bot.db.before_restore
+2026-02-02 01:41:16,550 - bot.cloud_backup - INFO - Database restored from: temp_restore.db
+2026-02-02 01:41:16,550 - bot.cloud_backup - INFO - Restored from GitHub: backup_20260202_013905.db
+2026-02-02 01:41:16,552 - bot.database - INFO - SQLite database initialized: telegram_bot.db
+2026-02-02 01:41:16,646 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
