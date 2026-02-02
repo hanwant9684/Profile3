@@ -1,8 +1,6 @@
 import os
 import sqlite3
 import logging
-import asyncio
-from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta
 from typing import Optional, Dict, List
 from threading import Lock
@@ -15,7 +13,6 @@ DATABASE_PATH = os.environ.get("DATABASE_PATH", "telegram_bot.db")
 
 db_lock = Lock()
 _db_initialized = False
-_executor = ThreadPoolExecutor(max_workers=10)
 
 def _get_connection():
     conn = sqlite3.connect(DATABASE_PATH, check_same_thread=False, timeout=30.0)
@@ -26,11 +23,7 @@ def _get_connection():
     conn.execute("PRAGMA temp_store=MEMORY")
     return conn
 
-async def run_async(func, *args):
-    loop = asyncio.get_event_loop()
-    return await loop.run_in_executor(_executor, func, *args)
-
-def _init_db_sync():
+def init_db():
     global _db_initialized
     if _db_initialized:
         return
@@ -78,10 +71,7 @@ def _init_db_sync():
         logger.error(f"SQLite initialization error: {e}")
         raise
 
-async def init_db():
-    await run_async(_init_db_sync)
-
-def _get_user_sync(user_id):
+async def get_user(user_id) -> Optional[Dict]:
     try:
         with db_lock:
             conn = _get_connection()
@@ -94,27 +84,24 @@ def _get_user_sync(user_id):
             user = dict(row)
             user['is_banned'] = bool(user['is_banned'])
             user['is_agreed_terms'] = bool(user['is_agreed_terms'])
+            
+            if OWNER_ID and str(user_id) == str(OWNER_ID):
+                if user.get("role") != "owner":
+                    await set_user_role(user_id, "owner")
+                    user["role"] = "owner"
             return user
-        return None
-    except Exception as e:
-        logger.error(f"Error getting user {user_id}: {e}")
-        return None
-
-async def get_user(user_id) -> Optional[Dict]:
-    user = await run_async(_get_user_sync, user_id)
-    if not user:
+        
         if OWNER_ID and str(user_id) == str(OWNER_ID):
             user = await create_user(user_id)
             if user:
                 await set_user_role(user_id, "owner")
                 user["role"] = "owner"
             return user
+        
         return None
-    
-    if OWNER_ID and str(user_id) == str(OWNER_ID) and user.get("role") != "owner":
-        await set_user_role(user_id, "owner")
-        user["role"] = "owner"
-    return user
+    except Exception as e:
+        logger.error(f"Error getting user {user_id}: {e}")
+        return None
 
 async def create_user(user_id) -> Optional[Dict]:
     try:
