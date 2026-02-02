@@ -199,3 +199,14 @@ sqlite3.ProgrammingError: Cannot operate on a closed database.
 2026-02-02 02:12:13,853 - bot.cloud_backup - INFO - Restored from GitHub: backup_20260202_020815.db
 2026-02-02 02:12:13,859 - bot.database - INFO - SQLite database initialized: telegram_bot.db
 2026-02-02 02:12:13,981 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
+2026-02-02 02:14:01,206 - bot.ads - INFO - RichAds: No ads available for user 721236024
+2026-02-02 02:14:01,264 - root - INFO - TURBO Download: File=downloads/721236024_1664.mp4, Size=204621879, Workers=1, Chunk=524288
+2026-02-02 02:16:27,310 - root - INFO - TURBO Upload: File=/home/runner/workspace/downloads/721236024_1664.mp4, Size=204621879, Workers=64, Chunk=524288
+2026-02-02 02:22:14,897 - bot.cloud_backup - INFO - Uploaded to GitHub: backups/backup_20260202_022214.db
+2026-02-02 02:22:17,543 - bot.cloud_backup - INFO - Deleted old backup: backup_20260202_015116.db
+2026-02-02 03:09:46,198 - bot.cloud_backup - INFO - Attempting to restore from GitHub...
+2026-02-02 03:09:47,009 - bot.cloud_backup - INFO - Current database backed up to: telegram_bot.db.before_restore
+2026-02-02 03:09:47,009 - bot.cloud_backup - INFO - Database restored from: temp_restore.db
+2026-02-02 03:09:47,009 - bot.cloud_backup - INFO - Restored from GitHub: backup_20260202_022214.db
+2026-02-02 03:09:47,011 - bot.database - INFO - SQLite database initialized: telegram_bot.db
+2026-02-02 03:09:47,390 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes

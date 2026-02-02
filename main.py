@@ -50,6 +50,12 @@ if __name__ == "__main__":
     try:
         import tgcrypto
         print(f"✅ TgCrypto is active. Fast transfers enabled.")
+        import pyrogram
+        print(f"📦 Pyrogram Path: {pyrogram.__file__}")
+        if "runner/workspace/pyrogram" in pyrogram.__file__:
+            print("🚀 TURBO: Verified using CUSTOM Pyrogram library.")
+        else:
+            print("⚠️ WARNING: Using STANDARD Pyrogram library instead of custom one.")
     except ImportError:
         print("❌ TgCrypto NOT FOUND. Bot will be slow.")
     except Exception as e:

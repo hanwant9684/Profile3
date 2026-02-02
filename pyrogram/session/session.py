@@ -50,8 +50,8 @@ class Session:
     WAIT_TIMEOUT = 5
     SLEEP_THRESHOLD = 10
     MAX_RETRIES = 5
-    ACKS_THRESHOLD = 32 # Turbo: Batch more acks
-    PING_INTERVAL = 15 # Turbo: Less frequent pings
+    ACKS_THRESHOLD = 64 # Turbo: Batch more acks
+    PING_INTERVAL = 30 # Turbo: Less frequent pings
     STORED_MSG_IDS_MAX_SIZE = 1000 * 2
 
     TRANSPORT_ERRORS = {

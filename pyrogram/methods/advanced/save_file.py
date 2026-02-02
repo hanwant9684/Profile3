@@ -200,7 +200,7 @@ class SaveFile:
                         log.exception(e)
 
             workers_list = [self.loop.create_task(turbo_worker(session)) for _ in range(workers_count)]
-            log.info(f"TURBO: Uploading with {workers_count} parallel workers, queue size {workers_count * 4}")
+            log.info(f"TURBO: Uploading with {workers_count} parallel workers, queue size {workers_count * 8}")
 
             try:
                 fp.seek(part_size * file_part)
