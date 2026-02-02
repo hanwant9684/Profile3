@@ -338,8 +338,10 @@ class Session:
         if wait_response:
             self.results[msg_id] = Result()
 
-        # Turbo: Simplified packing and direct send
-        payload = mtproto.pack(
+        # Turbo: Speed up packing by using direct calls
+        payload = await self.loop.run_in_executor(
+            pyrogram.crypto_executor,
+            mtproto.pack,
             message,
             self.salt,
             self.session_id,
@@ -348,6 +350,7 @@ class Session:
         )
 
         try:
+            # TURBO: Direct await for network write
             await self.connection.send(payload)
         except OSError as e:
             self.results.pop(msg_id, None)
