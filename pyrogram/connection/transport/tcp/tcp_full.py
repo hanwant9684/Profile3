@@ -37,11 +37,13 @@ class TCPFull(TCP):
         self.seq_no = 0
 
     async def send(self, data: bytes, *args) -> None:
-        data = pack("<II", len(data) + 12, self.seq_no) + data
-        data += pack("<I", crc32(data))
+        # Optimization: Pre-allocate header to avoid multiple concatenations
+        header = pack("<II", len(data) + 12, self.seq_no)
+        payload = header + data
+        checksum = pack("<I", crc32(payload))
+        
         self.seq_no += 1
-
-        await super().send(data)
+        await super().send(payload + checksum)
 
     async def recv(self, length: int = 0) -> Optional[bytes]:
         length = await super().recv(4)

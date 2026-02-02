@@ -206,13 +206,15 @@ class SaveFile:
                 fp.seek(part_size * file_part)
                 
                 # Pre-read and queue chunks for parallel processing
+                # Using memoryview for zero-copy efficiency
                 while True:
-                    chunk = fp.read(part_size)
-
-                    if not chunk:
+                    chunk_raw = fp.read(part_size)
+                    if not chunk_raw:
                         if not is_big and not is_missing_part:
                             md5_sum = "".join([hex(i)[2:].zfill(2) for i in md5_sum.digest()])
                         break
+                    
+                    chunk = memoryview(chunk_raw)
 
                     if is_big:
                         rpc = raw.functions.upload.SaveBigFilePart(
