@@ -210,3 +210,41 @@ sqlite3.ProgrammingError: Cannot operate on a closed database.
 2026-02-02 03:09:47,009 - bot.cloud_backup - INFO - Restored from GitHub: backup_20260202_022214.db
 2026-02-02 03:09:47,011 - bot.database - INFO - SQLite database initialized: telegram_bot.db
 2026-02-02 03:09:47,390 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
+2026-02-02 03:12:47,683 - bot.ads - INFO - RichAds: Ad received for user 721236024
+2026-02-02 03:12:48,874 - bot.ads - INFO - RichAds: Ad successfully displayed to user 721236024
+2026-02-02 03:12:54,980 - bot.ads - INFO - RichAds: No ads available for user 721236024
+2026-02-02 03:12:55,089 - root - INFO - TURBO Download: File=downloads/721236024_1664.mp4, Size=204621879, Workers=1, Chunk=524288
+2026-02-02 03:14:49,548 - root - INFO - TURBO Upload: File=/home/runner/workspace/downloads/721236024_1664.mp4, Size=204621879, Workers=64, Chunk=524288
+2026-02-02 03:15:42,642 - bot.ads - INFO - RichAds: Ad received for user 721236024
+2026-02-02 03:15:42,776 - root - INFO - TURBO Download: File=downloads/721236024_1655.mp4, Size=116440742, Workers=1, Chunk=524288
+2026-02-02 03:15:43,640 - bot.ads - INFO - RichAds: Ad successfully displayed to user 721236024
+2026-02-02 03:16:50,835 - root - INFO - TURBO Upload: File=/home/runner/workspace/downloads/721236024_1655.mp4, Size=116440742, Workers=64, Chunk=524288
+2026-02-02 03:19:48,306 - bot.cloud_backup - INFO - Uploaded to GitHub: backups/backup_20260202_031947.db
+2026-02-02 03:19:49,675 - bot.cloud_backup - INFO - Deleted old backup: backup_20260202_020815.db
+2026-02-02 03:24:00,598 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-934' coro=<Session.restart() done, defined at /home/runner/workspace/pyrogram/session/session.py:185> exception=ProgrammingError('Cannot operate on a closed database.')>
+Traceback (most recent call last):
+  File "/home/runner/workspace/pyrogram/session/session.py", line 187, in restart
+    await self.start()
+  File "/home/runner/workspace/pyrogram/session/session.py", line 152, in start
+    raise e
+  File "/home/runner/workspace/pyrogram/session/session.py", line 126, in start
+    api_id=await self.client.storage.api_id(),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/pyrogram/storage/sqlite_storage.py", line 242, in api_id
+    return self._accessor(value)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/pyrogram/storage/sqlite_storage.py", line 236, in _accessor
+    return self._get() if value == object else self._set(value)
+           ^^^^^^^^^^^
+  File "/home/runner/workspace/pyrogram/storage/sqlite_storage.py", line 222, in _get
+    return self.conn.execute(
+           ^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+2026-02-02 03:25:22,391 - root - INFO - Stop signal received (SIGTERM). Exiting...
+2026-02-02 03:25:23,829 - bot.cloud_backup - INFO - Attempting to restore from GitHub...
+2026-02-02 03:25:24,521 - bot.cloud_backup - INFO - Current database backed up to: telegram_bot.db.before_restore
+2026-02-02 03:25:24,522 - bot.cloud_backup - INFO - Database restored from: temp_restore.db
+2026-02-02 03:25:24,522 - bot.cloud_backup - INFO - Restored from GitHub: backup_20260202_031947.db
+2026-02-02 03:25:24,523 - bot.database - INFO - SQLite database initialized: telegram_bot.db
+2026-02-02 03:25:24,598 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes

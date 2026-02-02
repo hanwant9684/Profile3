@@ -181,7 +181,8 @@ class SaveFile:
                     if data is None:
                         return
                     try:
-                        await session.invoke(data)
+                        # Invoke with a dedicated task to avoid blocking the worker loop
+                        self.loop.create_task(session.invoke(data))
                         uploaded_parts += 1
                         
                         # Progress callback - throttled for performance
