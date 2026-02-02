@@ -263,3 +263,6 @@ sqlite3.ProgrammingError: Cannot operate on a closed database.
 2026-02-02 03:36:25,160 - bot.cloud_backup - INFO - Restored from GitHub: backup_20260202_033524.db
 2026-02-02 03:36:25,161 - bot.database - INFO - SQLite database initialized: telegram_bot.db
 2026-02-02 03:36:25,246 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
+2026-02-02 03:37:14,003 - bot.ads - INFO - RichAds: No ads available for user 721236024
+2026-02-02 03:37:14,232 - root - INFO - TURBO Download: File=downloads/721236024_1655.mp4, Size=116440742, Workers=1, Chunk=524288
+2026-02-02 03:38:26,581 - root - INFO - TURBO Upload: File=/home/runner/workspace/downloads/721236024_1655.mp4, Size=116440742, Workers=64, Chunk=524288
