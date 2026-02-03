@@ -8,13 +8,3 @@ uvloop
 psutil
 pyaes
 pysocks
-aiofiles
-aiohttp
-dnspython
-flask
-psutil
-pyaes
-pysocks
-python-dotenv
-tgcrypto
-uvloop
