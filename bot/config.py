@@ -28,8 +28,10 @@ DATABASE_PATH = os.environ.get("DATABASE_PATH", "telegram_bot.db")
 DUMP_CHANNEL_ID = os.environ.get("DUMP_CHANNEL_ID")
 
 # Performance Settings - TURBO MODE
-MAX_CONCURRENT_DOWNLOADS = int(os.environ.get("MAX_CONCURRENT_DOWNLOADS", 4)) 
-MAX_CONCURRENT_UPLOADS = int(os.environ.get("MAX_CONCURRENT_UPLOADS", 10))
+MAX_CONCURRENT_DOWNLOADS = 10 
+MAX_CONCURRENT_UPLOADS = 20
+FREE_USER_COOLDOWN = 60
+BATCH_DELAY = 5
 
 def get_smart_download_workers(file_size):
     """

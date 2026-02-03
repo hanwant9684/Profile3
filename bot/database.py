@@ -45,6 +45,7 @@ def init_db():
                     is_banned INTEGER DEFAULT 0,
                     ads_today INTEGER DEFAULT 0,
                     last_ad_date TEXT,
+                    last_download_time REAL DEFAULT 0,
                     created_at TEXT,
                     updated_at TEXT
                 )
@@ -341,6 +342,18 @@ async def update_setting(key, value, json_value=None):
             conn.close()
     except Exception as e:
         logger.error(f"Error updating setting {key}: {e}")
+
+async def update_user_last_download(user_id, timestamp):
+    try:
+        with db_lock:
+            conn = _get_connection()
+            cursor = conn.cursor()
+            cursor.execute('UPDATE users SET last_download_time = ?, updated_at = ? WHERE telegram_id = ?',
+                           (timestamp, datetime.utcnow().isoformat(), str(user_id)))
+            conn.commit()
+            conn.close()
+    except Exception as e:
+        logger.error(f"Error updating last download time for {user_id}: {e}")
 
 async def get_all_users() -> List[Dict]:
     try:

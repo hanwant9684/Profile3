@@ -151,8 +151,9 @@ async def batch_command(client, message):
                  mock_message.text = f"https://t.me/c/{start_match.group(1)}/{msg_id}"
             
             await download_handler(client, mock_message)
-            # Increased delay to 20 seconds to prevent floodwait from Telegram during batch
-            await asyncio.sleep(20) 
+            # 5 second delay for batch as requested
+            from bot.config import BATCH_DELAY
+            await asyncio.sleep(BATCH_DELAY) 
             
     except Exception as e:
         await message.reply(f"❌ Batch error: {str(e)}")
@@ -161,6 +162,16 @@ async def batch_command(client, message):
 async def download_handler(client, message):
     user_id = message.from_user.id
     
+    user = await get_user(user_id)
+    if not user or user.get('role') == 'free':
+        from bot.config import FREE_USER_COOLDOWN
+        last_download = user.get('last_download_time', 0) if user else 0
+        now = time.time()
+        if now - last_download < FREE_USER_COOLDOWN:
+            wait_time = int(FREE_USER_COOLDOWN - (now - last_download))
+            await message.reply(f"⏳ Free users must wait {FREE_USER_COOLDOWN} seconds between downloads. Please wait {wait_time}s.")
+            return
+
     # Check force sub before starting download
     is_subbed, channel = await verify_force_sub(client, user_id)
     if not is_subbed and channel:
