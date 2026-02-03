@@ -204,6 +204,7 @@ class SaveFile:
                         queue.task_done()
 
             workers_list = [self.loop.create_task(turbo_worker(session)) for _ in range(workers_count)]
+            start_time = time.time()
             log.info(f"TURBO: Uploading with {workers_count} parallel workers, queue size {workers_count * 8}")
 
             try:
@@ -248,6 +249,10 @@ class SaveFile:
             except Exception as e:
                 log.exception(e)
             else:
+                elapsed = time.time() - start_time
+                speed_mb_s = (file_size / (1024 * 1024)) / elapsed if elapsed > 0 else 0
+                log.info(f"TURBO: Upload Finished. Size: {file_size / (1024 * 1024):.2f} MB, Time: {elapsed:.2f}s, Speed: {speed_mb_s:.2f} MB/s")
+                
                 if is_big:
                     return raw.types.InputFileBig(
                         id=file_id,
