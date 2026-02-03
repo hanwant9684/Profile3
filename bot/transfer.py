@@ -38,6 +38,8 @@ async def download_media_fast(client: Client, message, file_name, progress_callb
             progress_args=progress_args
         )
 
+import gc
+
 async def upload_media_fast(client: Client, chat_id, file_path, caption="", progress_callback=None, **kwargs):
     """TURBO: Fast media uploader using maximum parallel workers"""
     file_size = os.path.getsize(file_path) if os.path.exists(file_path) else 0
@@ -46,56 +48,64 @@ async def upload_media_fast(client: Client, chat_id, file_path, caption="", prog
     
     logging.info(f"TURBO Upload: File={file_path}, Size={file_size}, Workers={workers}, Chunk={chunk_size}")
     
-    # Check if this is a video upload by checking for 'duration' or other video-specific kwargs
-    if "duration" in kwargs or file_path.lower().endswith((".mp4", ".mkv", ".mov", ".avi")):
-        return await client.send_video(
+    # NITRO: GC Management for 1.5GB RAM VPS
+    gc.collect() # Pre-transfer cleanup
+    gc.disable() # Disable during transfer to prevent CPU spikes
+    
+    try:
+        # Check if this is a video upload by checking for 'duration' or other video-specific kwargs
+        if "duration" in kwargs or file_path.lower().endswith((".mp4", ".mkv", ".mov", ".avi")):
+            return await client.send_video(
+                chat_id, 
+                file_path, 
+                caption=caption, 
+                progress=progress_callback,
+                workers=workers, # Now explicitly supported in our modded send_video
+                **kwargs
+            )
+        
+        # If it's a photo, send it as a photo instead of a document to avoid PHOTO_EXT_INVALID
+        if file_path.lower().endswith((".jpg", ".jpeg", ".png", ".webp")):
+            # Ensure we have the right extension for Telegram
+            if not file_path.lower().endswith((".jpg", ".jpeg")):
+                 # Telegram is picky about photo extensions in SendMedia
+                 logging.info(f"Photo extension check: {file_path}")
+            
+            try:
+                return await client.send_photo(
+                    chat_id,
+                    file_path,
+                    caption=caption,
+                    progress=progress_callback,
+                    workers=workers, # modded
+                    **kwargs
+                )
+            except Exception as e:
+                logging.warning(f"Failed to send as photo, falling back to document: {e}")
+                # Fallback to document if send_photo fails
+            
+        # If it's a voice message (ogg), send it as a voice
+        if file_path.lower().endswith(".ogg"):
+            try:
+                return await client.send_voice(
+                    chat_id,
+                    file_path,
+                    caption=caption,
+                    progress=progress_callback,
+                    workers=workers, # modded
+                    **kwargs
+                )
+            except Exception as e:
+                logging.warning(f"Failed to send as voice, falling back to document: {e}")
+    
+        return await client.send_document(
             chat_id, 
             file_path, 
             caption=caption, 
             progress=progress_callback,
-            workers=workers, # Now explicitly supported in our modded send_video
+            workers=workers, # modded
             **kwargs
         )
-    
-    # If it's a photo, send it as a photo instead of a document to avoid PHOTO_EXT_INVALID
-    if file_path.lower().endswith((".jpg", ".jpeg", ".png", ".webp")):
-        # Ensure we have the right extension for Telegram
-        if not file_path.lower().endswith((".jpg", ".jpeg")):
-             # Telegram is picky about photo extensions in SendMedia
-             logging.info(f"Photo extension check: {file_path}")
-        
-        try:
-            return await client.send_photo(
-                chat_id,
-                file_path,
-                caption=caption,
-                progress=progress_callback,
-                workers=workers, # modded
-                **kwargs
-            )
-        except Exception as e:
-            logging.warning(f"Failed to send as photo, falling back to document: {e}")
-            # Fallback to document if send_photo fails
-        
-    # If it's a voice message (ogg), send it as a voice
-    if file_path.lower().endswith(".ogg"):
-        try:
-            return await client.send_voice(
-                chat_id,
-                file_path,
-                caption=caption,
-                progress=progress_callback,
-                workers=workers, # modded
-                **kwargs
-            )
-        except Exception as e:
-            logging.warning(f"Failed to send as voice, falling back to document: {e}")
-
-    return await client.send_document(
-        chat_id, 
-        file_path, 
-        caption=caption, 
-        progress=progress_callback,
-        workers=workers, # modded
-        **kwargs
-    )
+    finally:
+        gc.enable() # Re-enable after transfer
+        gc.collect() # Post-transfer cleanup
