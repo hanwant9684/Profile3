@@ -322,3 +322,142 @@ sqlite3.ProgrammingError: Cannot operate on a closed database.
 2026-02-03 01:27:15,698 - bot.cloud_backup - INFO - Restored from GitHub: backup_20260202_105439.db
 2026-02-03 01:27:15,699 - bot.database - INFO - SQLite database initialized: telegram_bot.db
 2026-02-03 01:27:15,786 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
+2026-02-03 01:27:57,896 - bot.ads - INFO - RichAds: No ads available for user 721236024
+2026-02-03 01:27:57,900 - bot.ads - INFO - RichAds: No ads available for user 721236024
+2026-02-03 01:27:58,216 - root - INFO - TURBO Download: File=downloads/721236024_1664.mp4, Size=204621879, Workers=1, Chunk=524288
+2026-02-03 01:29:58,250 - root - INFO - TURBO Upload: File=/home/runner/workspace/downloads/721236024_1664.mp4, Size=204621879, Workers=64, Chunk=524288
+2026-02-03 01:29:58,281 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-518' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,281 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-519' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,281 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-520' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,281 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-521' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,281 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-522' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,281 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-523' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,281 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-524' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,281 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-525' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,281 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-526' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,281 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-527' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,282 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-528' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,282 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-529' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,282 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-530' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,282 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-531' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,282 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-532' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,282 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-533' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,282 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-534' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,282 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-535' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,282 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-536' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,282 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-537' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,282 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-538' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,282 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-539' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,283 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-540' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,283 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-541' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,283 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-542' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,283 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-543' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,283 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-544' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,283 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-545' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,283 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-546' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,283 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-547' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,283 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-548' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,283 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-549' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,283 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-550' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,283 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-551' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,283 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-552' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,283 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-553' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,283 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-554' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,284 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-555' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,284 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-556' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,284 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-557' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,284 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-558' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,284 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-559' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,284 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-560' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,284 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-561' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,284 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-562' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,284 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-563' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,284 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-564' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,284 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-565' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,284 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-566' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,284 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-567' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,284 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-568' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,284 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-569' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,284 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-570' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,284 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-571' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,285 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-572' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,285 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-573' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,285 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-574' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,285 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-575' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,285 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-576' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,285 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-577' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,285 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-578' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,285 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-579' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,285 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-580' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:29:58,285 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-581' coro=<SaveFile.save_file.<locals>.turbo_worker() running at /home/runner/workspace/pyrogram/methods/advanced/save_file.py:180> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2026-02-03 01:30:45,009 - root - INFO - Stop signal received (SIGTERM). Exiting...
+2026-02-03 01:30:49,036 - bot.cloud_backup - INFO - Attempting to restore from GitHub...
+2026-02-03 01:30:49,695 - bot.cloud_backup - INFO - Current database backed up to: telegram_bot.db.before_restore
+2026-02-03 01:30:49,695 - bot.cloud_backup - INFO - Database restored from: temp_restore.db
+2026-02-03 01:30:49,695 - bot.cloud_backup - INFO - Restored from GitHub: backup_20260202_105439.db
+2026-02-03 01:30:49,697 - bot.database - INFO - SQLite database initialized: telegram_bot.db
+2026-02-03 01:30:49,788 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes

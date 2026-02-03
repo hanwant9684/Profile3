@@ -162,6 +162,9 @@ class SaveFile:
             file_id = file_id or self.rnd_id()
             md5_sum = md5() if not is_big and not is_missing_part else None
             dc_id = await self.storage.dc_id()
+            
+            # TURBO: Ensure time is available
+            import time
 
             session = self.media_sessions.get(dc_id)
             if not session:
