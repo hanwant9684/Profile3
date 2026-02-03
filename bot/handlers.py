@@ -28,8 +28,8 @@ async def progress_bar(current, total, message, type_msg):
     data = progress_bar.data[msg_id]
     percentage = current * 100 / total
     
-    # Throttle updates: Update at most every 5 seconds to avoid bottleneck
-    if current != total and (now - data["last_edit"]) < 5:
+    # Throttle updates: Update at most every 10 seconds to avoid bottleneck and floodwait
+    if current != total and (now - data["last_edit"]) < 10:
         return
 
     # Calculate speed, ETA, etc removed for performance
@@ -151,8 +151,8 @@ async def batch_command(client, message):
                  mock_message.text = f"https://t.me/c/{start_match.group(1)}/{msg_id}"
             
             await download_handler(client, mock_message)
-            # Increased delay to 10 seconds to prevent floodwait from Telegram
-            await asyncio.sleep(10) 
+            # Increased delay to 20 seconds to prevent floodwait from Telegram during batch
+            await asyncio.sleep(20) 
             
     except Exception as e:
         await message.reply(f"❌ Batch error: {str(e)}")
