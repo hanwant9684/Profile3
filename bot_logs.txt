@@ -302,3 +302,23 @@ sqlite3.ProgrammingError: Cannot operate on a closed database.
 2026-02-03 01:22:29,825 - bot.cloud_backup - INFO - Restored from GitHub: backup_20260202_105439.db
 2026-02-03 01:22:29,826 - bot.database - INFO - SQLite database initialized: telegram_bot.db
 2026-02-03 01:22:29,935 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
+2026-02-03 01:23:41,159 - bot.cloud_backup - INFO - Attempting to restore from GitHub...
+2026-02-03 01:23:41,795 - bot.cloud_backup - INFO - Current database backed up to: telegram_bot.db.before_restore
+2026-02-03 01:23:41,798 - bot.cloud_backup - INFO - Database restored from: temp_restore.db
+2026-02-03 01:23:41,798 - bot.cloud_backup - INFO - Restored from GitHub: backup_20260202_105439.db
+2026-02-03 01:23:41,802 - bot.database - INFO - SQLite database initialized: telegram_bot.db
+2026-02-03 01:23:41,904 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
+2026-02-03 01:23:49,546 - bot.ads - INFO - RichAds: No ads available for user 721236024
+2026-02-03 01:23:49,555 - bot.ads - INFO - RichAds: No ads available for user 721236024
+2026-02-03 01:24:10,317 - bot.ads - INFO - RichAds: No ads available for user 721236024
+2026-02-03 01:24:10,351 - bot.ads - INFO - RichAds: Ad received for user 721236024
+2026-02-03 01:24:10,446 - root - INFO - TURBO Download: File=downloads/721236024_1664.mp4, Size=204621879, Workers=1, Chunk=524288
+2026-02-03 01:24:11,473 - bot.ads - INFO - RichAds: Ad successfully displayed to user 721236024
+2026-02-03 01:26:22,866 - root - INFO - TURBO Upload: File=/home/runner/workspace/downloads/721236024_1664.mp4, Size=204621879, Workers=64, Chunk=524288
+2026-02-03 01:27:11,275 - root - INFO - Stop signal received (SIGTERM). Exiting...
+2026-02-03 01:27:15,295 - bot.cloud_backup - INFO - Attempting to restore from GitHub...
+2026-02-03 01:27:15,697 - bot.cloud_backup - INFO - Current database backed up to: telegram_bot.db.before_restore
+2026-02-03 01:27:15,698 - bot.cloud_backup - INFO - Database restored from: temp_restore.db
+2026-02-03 01:27:15,698 - bot.cloud_backup - INFO - Restored from GitHub: backup_20260202_105439.db
+2026-02-03 01:27:15,699 - bot.database - INFO - SQLite database initialized: telegram_bot.db
+2026-02-03 01:27:15,786 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
