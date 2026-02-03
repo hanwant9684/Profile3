@@ -274,3 +274,10 @@ sqlite3.ProgrammingError: Cannot operate on a closed database.
 2026-02-03 01:18:12,477 - bot.cloud_backup - INFO - Restored from GitHub: backup_20260202_105439.db
 2026-02-03 01:18:12,503 - bot.database - INFO - SQLite database initialized: telegram_bot.db
 2026-02-03 01:18:12,710 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes
+2026-02-03 01:19:16,498 - root - INFO - Stop signal received (SIGTERM). Exiting...
+2026-02-03 01:19:20,560 - bot.cloud_backup - INFO - Attempting to restore from GitHub...
+2026-02-03 01:19:20,977 - bot.cloud_backup - INFO - Current database backed up to: telegram_bot.db.before_restore
+2026-02-03 01:19:20,977 - bot.cloud_backup - INFO - Database restored from: temp_restore.db
+2026-02-03 01:19:20,978 - bot.cloud_backup - INFO - Restored from GitHub: backup_20260202_105439.db
+2026-02-03 01:19:20,979 - bot.database - INFO - SQLite database initialized: telegram_bot.db
+2026-02-03 01:19:21,067 - bot.cloud_backup - INFO - Starting periodic GitHub backups every 10 minutes

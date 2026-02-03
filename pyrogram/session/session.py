@@ -265,6 +265,9 @@ class Session:
             if msg_id in self.results:
                 self.results[msg_id].value = getattr(msg.body, "result", msg.body)
                 self.results[msg_id].event.set()
+            elif self.is_media and isinstance(msg.body, raw.types.RpcResult):
+                # NITRO: Clean up results for fire-and-forget uploads
+                pass
 
         if len(self.pending_acks) >= self.ACKS_THRESHOLD:
             log.debug("Sending %s acks", len(self.pending_acks))
@@ -338,16 +341,25 @@ class Session:
         if wait_response:
             self.results[msg_id] = Result()
 
-        # Turbo: Speed up packing by using direct calls
-        payload = await self.loop.run_in_executor(
-            pyrogram.crypto_executor,
-            mtproto.pack,
-            message,
-            self.salt,
-            self.session_id,
-            self.auth_key,
-            self.auth_key_id
-        )
+        # NITRO: Inline crypto - removes executor overhead for uploads
+        if self.is_media:
+            payload = mtproto.pack(
+                message,
+                self.salt,
+                self.session_id,
+                self.auth_key,
+                self.auth_key_id
+            )
+        else:
+            payload = await self.loop.run_in_executor(
+                pyrogram.crypto_executor,
+                mtproto.pack,
+                message,
+                self.salt,
+                self.session_id,
+                self.auth_key,
+                self.auth_key_id
+            )
 
         try:
             # TURBO: Direct await for network write
