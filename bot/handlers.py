@@ -415,6 +415,11 @@ async def download_handler(client, message):
                                     media_msg.text,
                                     entities=media_msg.entities
                                 )
+                                try:
+                                    from bot.database import update_user_last_download
+                                    await update_user_last_download(user_id, time.time())
+                                except:
+                                    pass
                                 downloaded_count += 1
                                 # Handle dumping for text messages
                                 dump_id = os.environ.get("DUMP_CHANNEL_ID")
@@ -467,6 +472,11 @@ async def download_handler(client, message):
                             if sent:
                                 path = "COPIED"
                                 sent_msg = sent
+                                try:
+                                    from bot.database import update_user_last_download
+                                    await update_user_last_download(user_id, time.time())
+                                except:
+                                    pass
                                 downloaded_count += 1
                         except Exception as e:
                             print(f"[DEBUG] copy_message failed: {e}, falling back to download")
@@ -611,6 +621,11 @@ async def download_handler(client, message):
                             from bot.config import global_upload_semaphore
                             global_upload_semaphore.release()
                         
+                        try:
+                            from bot.database import update_user_last_download
+                            await update_user_last_download(user_id, time.time())
+                        except:
+                            pass
                         downloaded_count += 1
                         
                         # Clean up file only if it's a file path, not BytesIO
