@@ -31,18 +31,38 @@ class TCPFull(TCP):
         super().__init__(ipv6, proxy)
 
         self.seq_no: Optional[int] = None
+        self._send_buffer = bytearray(512 * 1024 + 64) # Pre-allocate 512KB + header space
 
     async def connect(self, address: Tuple[str, int]) -> None:
         await super().connect(address)
         self.seq_no = 0
 
     async def send(self, data: bytes, *args) -> None:
-        # Extreme Optimization: Single buffer allocation
-        payload = pack("<II", len(data) + 12, self.seq_no) + data
-        payload += pack("<I", crc32(payload))
+        # NITRO: Optimized single-buffer zero-copy send
+        data_len = len(data)
+        total_len = data_len + 12
+        
+        # Structure the payload in our pre-allocated buffer if it fits
+        if total_len <= len(self._send_buffer):
+            view = memoryview(self._send_buffer)
+            # Length (4 bytes)
+            view[0:4] = pack("<I", total_len)
+            # Sequence Number (4 bytes)
+            view[4:8] = pack("<I", self.seq_no)
+            # Data
+            view[8:8+data_len] = data
+            # CRC32 of everything before the checksum
+            checksum = crc32(view[0:8+data_len])
+            view[8+data_len:12+data_len] = pack("<I", checksum)
+            
+            await super().send(view[0:total_len])
+        else:
+            # Fallback for jumbo packets (unlikely in Telegram)
+            payload = pack("<II", total_len, self.seq_no) + data
+            payload += pack("<I", crc32(payload))
+            await super().send(payload)
         
         self.seq_no += 1
-        await super().send(payload)
 
     async def recv(self, length: int = 0) -> Optional[bytes]:
         length = await super().recv(4)
