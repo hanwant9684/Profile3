@@ -171,7 +171,7 @@ class SaveFile:
                 await session.start()
 
             # TURBO: Large queue for maximum parallelism
-            queue = asyncio.Queue(workers_count * 4)
+            queue = asyncio.Queue(workers_count * 8)
             uploaded_parts = 0
             
             async def turbo_worker(session):
@@ -181,11 +181,13 @@ class SaveFile:
                     if data is None:
                         return
                     try:
-                        await session.invoke(data)
+                        # NITRO: Direct invoke without waiting for individual part results
+                        # This saturated the pipe by not blocking on acks
+                        await session.send(data, wait_response=False)
                         uploaded_parts += 1
                         
                         # Progress callback - throttled for performance
-                        if progress and (uploaded_parts % 10 == 0 or uploaded_parts == file_total_parts):
+                        if progress and (uploaded_parts % 20 == 0 or uploaded_parts == file_total_parts):
                             func = functools.partial(
                                 progress,
                                 min(uploaded_parts * part_size, file_size),
@@ -198,6 +200,8 @@ class SaveFile:
                                 await self.loop.run_in_executor(self.executor, func)
                     except Exception as e:
                         log.exception(e)
+                    finally:
+                        queue.task_done()
 
             workers_list = [self.loop.create_task(turbo_worker(session)) for _ in range(workers_count)]
             log.info(f"TURBO: Uploading with {workers_count} parallel workers, queue size {workers_count * 8}")
@@ -259,6 +263,9 @@ class SaveFile:
                         md5_checksum=md5_sum
                     )
             finally:
+                # Wait for all parts to be sent before finishing
+                await queue.join()
+                
                 for _ in workers_list:
                     await queue.put(None)
 
